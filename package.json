@@ -2,10 +2,17 @@
   "name": "rpcs_prototype",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.cjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.cjs"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@rpch/crypto": "^0.3.4",
+    "@rpch/crypto-for-nodejs": "^0.3.4",
+    "@rpch/sdk": "^0.1.7",
+    "esm": "^3.2.25"
+  }
 }
