@@ -5,7 +5,7 @@
 ```
 2. go to dir
 ```
-cd RPCS_PROTOTYPE
+cd rpcs_prototype
 ```
 3. Add dependencies 
 ```
