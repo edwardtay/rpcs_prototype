@@ -1,7 +1,7 @@
 # rpcs_prototype
 1. clone repo
 ``` 
- git clone
+ git clone https://github.com/0xbhagi/rpcs_prototype.git
 ```
 2. go to dir
 ```
