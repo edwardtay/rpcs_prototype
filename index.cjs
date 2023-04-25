@@ -2,20 +2,31 @@ const RPChCrypto = require("@rpch/crypto");
 const SDK = require("@rpch/sdk").default;
 
 
+const fs = require('fs').promises;
+
 async function setKeyVal(key, val) {
-  localStorage.setItem(key, val);
+  await fs.writeFile(key, val);
 }
 
 async function getKeyVal(key) {
-  return localStorage.getItem(key);
+  try {
+    const val = await fs.readFile(key, 'utf8');
+    return val;
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      // File does not exist
+      return null;
+    }
+    throw error;
+  }
 }
 
 // Initialize the SDK
 const sdk = new SDK(
   {
     crypto: RPChCrypto,
-    client: "your_client_name",
-    timeout: 20000,
+    client: "trial",
+    timeout: 120000,
     discoveryPlatformApiEndpoint: "https://staging.discovery.rpch.tech",
   },
   setKeyVal,
